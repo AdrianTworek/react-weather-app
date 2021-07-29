@@ -6,7 +6,7 @@ const Intro = () => {
   useEffect(() => {
     return setTimeout(() => {
       intro.current.remove()
-    }, 2200)
+    }, 2999)
   }, [])
 
   return (

@@ -8,12 +8,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: slide-from-left 300ms ease-out,
-    slide-to-right 300ms ease-out 1.75s forwards;
+  animation: slide-from-left 250ms ease-out,
+    slide-to-right 250ms ease-out 2.5s forwards;
 
   &__logo {
     fill: $white;
-    animation: bounce 300ms infinite 350ms ease-in-out alternate;
+    animation: bounce 250ms infinite 450ms ease-in-out alternate;
   }
 
   &__heading {

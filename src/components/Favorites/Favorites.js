@@ -33,7 +33,7 @@ const Favorites = () => {
 
     setTimeout(() => {
       favoritesContainer.current.style.opacity = '1'
-    }, 2500)
+    }, 3500)
 
     return () => document.removeEventListener('mousedown', handler)
   }, [])

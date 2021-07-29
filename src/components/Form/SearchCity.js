@@ -19,7 +19,7 @@ const SearchCity = () => {
     setTimeout(() => {
       searchForm.current.classList.add('show')
       input.current.focus()
-    }, 2300)
+    }, 3100)
   }, [])
 
   const handleSubmit = (e) => {
