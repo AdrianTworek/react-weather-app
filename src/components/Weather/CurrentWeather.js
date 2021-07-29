@@ -67,7 +67,7 @@ const CurrentWeather = () => {
                   <div>
                     <div className="weather__icon">
                       <img
-                        src={`http://openweathermap.org/img/w/${icon}.png`}
+                        src={`https://openweathermap.org/img/w/${icon}.png`}
                         alt="Weather icon"
                       ></img>
                     </div>
