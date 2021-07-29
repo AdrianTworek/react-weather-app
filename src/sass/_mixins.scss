@@ -1,0 +1,45 @@
+// =========== Snippets ===========
+
+// Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-justify-between {
+  display: flex;
+  justify-content: space-around;
+}
+
+// =========== Media Queries ===========
+
+// 300px
+@mixin breakpoint-mobile-xs-down {
+  @media screen and (max-width: 18.75em) {
+    @content;
+  }
+}
+
+// 768px
+@mixin breakpoint-tablet-down {
+  @media screen and (max-width: 47.9375em) {
+    @content;
+  }
+}
+
+@mixin breakpoint-tablet-up {
+  @media screen and (min-width: 48em) {
+    @content;
+  }
+}

@@ -1,0 +1,56 @@
+.search {
+  position: relative;
+  margin: 0 auto;
+  display: none;
+  max-width: 21rem;
+  align-items: center;
+  animation: slide-from-up 350ms ease-in-out forwards;
+
+  &.show {
+    display: flex;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 1.2em 2.4em;
+    border: none;
+    border-radius: 5rem;
+    transition: box-shadow 200ms ease-in-out;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 1rem rgba($white, 0.2);
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    right: 7%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    svg {
+      transition: fill 200ms ease-in-out;
+    }
+
+    &:hover svg {
+      fill: gold;
+    }
+  }
+
+  &__error-popup {
+    position: absolute;
+    @include flex-center;
+    text-align: center;
+    width: 100%;
+    top: -3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

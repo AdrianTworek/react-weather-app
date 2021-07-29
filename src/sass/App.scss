@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'globals';
+@import 'animations';
+@import 'mixins';
+
+@import '../components/Intro/intro';
+@import '../components/Form/search';
+@import '../components/Weather/weather';
+@import '../components/Favorites/favorites';
+@import '../components/Forecast/forecast';
+@import '../components/Loaders/skeleton';
+@import '../components/Exceptions/error';

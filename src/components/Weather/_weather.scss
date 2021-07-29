@@ -1,0 +1,149 @@
+.weather {
+  position: relative;
+  @include flex-align-center;
+  flex-direction: column;
+  text-align: center;
+  width: 28rem;
+  border: 2px solid $lightNavy;
+  margin-top: 5rem;
+  padding: 1.75rem;
+  border-radius: 3rem;
+  border-top-right-radius: 0rem;
+  transition: box-shadow 200ms ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 0.5rem 0.25rem rgba($white, 0.3);
+  }
+
+  &__city {
+    font-size: clamp(1.8rem, 2vw, 2.25rem);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  &__temperature {
+    font-size: clamp(4rem, 7vw, 7rem);
+    margin-top: 1.25rem;
+  }
+
+  &__conditions {
+    font-size: clamp(2.5rem, 3.5vw, 2.7rem);
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  &__sub-conditions {
+    @include flex-justify-center;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.5;
+
+    div:not(:last-child) {
+      margin-right: 1.25rem;
+
+      @include breakpoint-mobile-xs-down {
+        margin-right: 0;
+      }
+    }
+
+    @include breakpoint-mobile-xs-down {
+      gap: 1.25rem;
+    }
+
+    p {
+      font-weight: 700;
+    }
+
+    @include breakpoint-tablet-up {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__sunrise,
+  &__sunset {
+    @include flex-justify-center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 2rem;
+
+    p {
+      font-weight: 500;
+      margin-right: 1rem;
+    }
+  }
+
+  &__sunset {
+    margin-top: 1rem;
+  }
+
+  // AddToFavorites button
+  &__cta {
+    @include flex-center;
+    position: absolute;
+    top: -1.75rem;
+    right: -1rem;
+    background-color: $white;
+    color: $darkNavy;
+    font-size: 2rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid $lightNavy;
+    z-index: 9999;
+    cursor: pointer;
+    transition: $color-favorite-transition;
+
+    &:hover {
+      color: $darkRed;
+    }
+  }
+
+  @include breakpoint-mobile-xs-down {
+    width: 100%;
+  }
+
+  @include breakpoint-tablet-up {
+    width: 100%;
+    flex-direction: row;
+    padding: 3rem;
+
+    & > div {
+      @include flex-center;
+      flex-direction: column;
+    }
+
+    & > div:first-child {
+      align-items: flex-start;
+    }
+
+    & > div:not(:last-child) {
+      margin: 0 2rem;
+    }
+
+    &__city {
+      text-align: left;
+    }
+
+    &__sub-conditions {
+      flex-direction: row;
+      margin: auto;
+      width: 30%;
+
+      div:not(:last-child) {
+        margin: 0 0 1.5rem 0;
+      }
+    }
+
+    &__sunset {
+      margin-top: 1rem;
+    }
+
+    &__sunrise,
+    &__sunset {
+      font-size: 2rem;
+      letter-spacing: 0;
+    }
+  }
+}

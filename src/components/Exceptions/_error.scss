@@ -1,0 +1,26 @@
+.error {
+  margin-top: 5rem;
+  @include flex-align-center;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+
+  h2 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 700;
+    animation: error-rotate 2s ease-in-out alternate infinite;
+  }
+
+  h3 {
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+  }
+
+  p {
+    font-size: clamp(1.4rem, 2.8vw, 1.7rem);
+  }
+
+  h3,
+  p {
+    font-weight: 300;
+  }
+}

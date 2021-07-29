@@ -1,0 +1,100 @@
+.favorites {
+  position: absolute;
+  opacity: 0;
+  top: 1rem;
+  right: 3rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  z-index: 999;
+
+  @include breakpoint-tablet-down {
+    right: 1rem;
+  }
+
+  &__cta {
+    position: absolute;
+    right: 1rem;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 3.5rem;
+    padding: 0.4rem;
+    color: $lightNavy;
+    cursor: pointer;
+    z-index: 9999;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: $darkRed;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__number {
+    @include flex-center;
+    position: absolute;
+    left: -0.5rem;
+    top: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $darkRed;
+    background-color: $white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99999;
+  }
+
+  ul {
+    position: absolute;
+    right: 0;
+    list-style-type: none;
+    background-color: $white;
+    color: $lightNavy;
+    font-size: 1.5rem;
+    padding: 1.75rem;
+    border-radius: 1rem;
+    border: 2px solid $lightNavy;
+    width: 25rem;
+  }
+
+  &__item {
+    @include flex-center;
+    position: relative;
+    cursor: pointer;
+    padding: 1rem;
+
+    span {
+      transition: color 200ms ease-in-out;
+      max-width: 14rem;
+    }
+
+    span:hover {
+      color: $darkNavy;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 2px solid $darkNavy;
+    }
+  }
+
+  &__delete {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: $color-favorite-transition;
+
+    &:hover {
+      color: $darkRed;
+    }
+  }
+}
