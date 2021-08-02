@@ -4,8 +4,11 @@ const Intro = () => {
   const intro = useRef()
 
   useEffect(() => {
+    document.body.style.overflow = 'hidden'
+
     return setTimeout(() => {
       intro.current.remove()
+      document.body.style.overflow = 'auto'
     }, 2999)
   }, [])
 
