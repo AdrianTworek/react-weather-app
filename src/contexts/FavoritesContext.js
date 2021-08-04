@@ -1,20 +1,17 @@
 import { createContext, useState } from 'react'
+import useLocalStorage from '../hooks/useLocalStorage'
 
 export const FavoritesContext = createContext()
 
 const FavoritesContextProvider = ({ children }) => {
-  // Get city names from local storage
-  let cities = localStorage.getItem('cities')
-  cities = cities ? cities.split(',') : []
-  // Limit favorite cities to 10
-  cities = cities.length > 9 ? cities.splice(0, 10) : cities
+  // Get data from local storage using custom hook
+  const cities = useLocalStorage()
 
   // Set initial state with cities retrieved from local storage
   const [favorites, setFavorites] = useState(cities)
 
   const addToFavorites = (city) => {
-    if (favorites.includes(city)) return
-    if (favorites.length > 9) return
+    if (favorites.includes(city) || favorites.length > 9) return
     localStorage.setItem('cities', [...favorites, city])
     setFavorites([...favorites, city])
   }
